@@ -1,13 +1,20 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import React from 'react';
 
-const Answers = ({ varibaleA, varibaleB, varibaleC }) => {
+const Answers = ({ varibaleA, varibaleB, varibaleC, x1, x2, borderColor }) => {
   return (
     <View style={styles.container}>
       <Text>Solución a una ecuación cuadrática</Text>   
       <Text> A: {varibaleA} </Text> 
-      <Text> B: {varibaleC} </Text>       
-      <Text> C: {varibaleB} </Text> 
+      <Text> B: {varibaleB} </Text>       
+      <Text> C: {varibaleC} </Text> 
+      <View style={[styles.Answer, { borderColor: borderColor }]}>
+        <Text> X1: {x1} </Text> 
+        <Text> X2: {x2} </Text> 
+      </View>
+      
+
+      
       </View>
   );
 }
@@ -25,7 +32,17 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
     borderWidth: 4,
     padding: 20,
-    marginTop: 20
+    marginTop: 20,
+    
+  },
+  Answer:{
+    marginTop: 10,
+    borderWidth: 2,
+    fontStyle: 'bold',
+    borderColor: 'white',
+    borderRadius:50,
+    width: 100,
+    alignItems: 'center',
   },
   input: {
     borderColor: 'black',

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput} from 'react-native';
 import React from 'react'
 
 const Form = ({setVariables}) => {
@@ -23,11 +23,7 @@ const Form = ({setVariables}) => {
         <Text style={styles.label}>Dame C:</Text>
         <TextInput style={styles.input} placeholder='C'  keyboardType='numeric' onChangeText={(text) => setC(text)} />
       </View>
-      <TouchableOpacity >
-        <Text>
-          Resove
-        </Text>
-      </TouchableOpacity>
+     
     </>
   )
 }
