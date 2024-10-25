@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View,  TouchableOpacity  } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Form from './components/Form';
 import Answers from './components/Answers'; 
 
@@ -10,11 +10,34 @@ export default function App() {
   const [borderColor, setBorderColor] = useState('white'); 
   const [x1, setX1] = useState('');
   const [x2, setX2] = useState('');
+  const [error, setError] = useState('');
 
-  function Resolve(){
+  function Resolve() {
+    if (varibaleA === '' || varibaleB === '' || varibaleC === '') {
+      setError("Por favor, ingresa valores en los campos A, B y C.");
+      setX1('');
+      setX2('');
+      return;
+    }
+
     const a = parseFloat(varibaleA);
     const b = parseFloat(varibaleB);
     const c = parseFloat(varibaleC);
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      setError("Por favor, ingresa valores numéricos válidos para A, B y C.");
+      setX1('');
+      setX2('');
+      return;
+    }
+
+    if (a === 0) {
+      setError("El valor de A no puede ser cero en una ecuación cuadrática.");
+      setX1('');
+      setX2('');
+      return;
+    }
+
 
     const discriminant = b * b - 4 * a * c;
 
@@ -29,6 +52,8 @@ export default function App() {
       setX1('No real');
       setX2('No real');
     }
+
+    setError('');
     setBorderColor('#5ce65c');
 
     setTimeout(() => {
@@ -36,8 +61,7 @@ export default function App() {
     }, 5000);
   }
 
-
-  function setVariables(a, b, c){
+  function setVariables(a, b, c) {
     setA(a);
     setB(b);
     setC(c);
@@ -46,18 +70,17 @@ export default function App() {
   return (
     <>
       <View style={styles.container}> 
-        <Text>Solución a una ecuación cuadrática</Text> 
+        <Text style={styles.title}>Solución a una ecuación cuadrática</Text> 
+        {error ? <Text style={styles.errorText}>{error}</Text> : null}
         <Form setVariables={setVariables} />
       </View>
       <View style={styles.container}>
         <Answers varibaleA={varibaleA} varibaleB={varibaleB} varibaleC={varibaleC} x1={x1} x2={x2} borderColor={borderColor} /> 
       </View>
-      <View  style={styles.buttonContainer}>
-      <TouchableOpacity onPress={Resolve} style={styles.resolveStyles} >
-        <Text>
-          Resolve
-        </Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={Resolve} style={styles.resolveStyles}>
+          <Text style={styles.buttonText}>Resolve</Text>
+        </TouchableOpacity>
       </View>
     </>
   );
