@@ -66,51 +66,61 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#f5f6fa',
     justifyContent: 'center',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    borderWidth: 4,
-    padding: 20
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#dcdde1',
+    padding: 25,
+    margin: 15,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   resolveStyles: {
-    flex: 0,
-    borderRadius: 50,
-    borderWidth: 2,
-    height: 40,
-    width: 100,
+    borderRadius: 25,
+    height: 50,
+    width: 160,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#5ce65c'
-
+    backgroundColor: '#6c5ce7',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   buttonContainer: {
-    flex: 0, 
-    justifyContent: 'center', 
+    justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,    
+    marginTop: 20,
     marginBottom: 20,
   },
-  layout: {
-    marginBottom: 30,
-    marginTop: 30
+  errorText: {
+    color: '#e74c3c',
+    marginBottom: 15,
+    textAlign: 'center',
+    fontSize: 14,
+    fontWeight: '500',
   },
-  input: {
-    borderColor: 'black',
-    borderWidth: 1,
-    height: 50,
-    width: 140,
-    marginBottom: 10,
-    marginTop: 10
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
   },
-  pic: {
-    flex: 1,
-    height: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 0,
-    marginBottom: 0
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#2d3436',
+    marginBottom: 20,
+    textAlign: 'center',
   }
 });

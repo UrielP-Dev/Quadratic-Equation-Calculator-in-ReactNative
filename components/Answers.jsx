@@ -24,33 +24,48 @@ export default Answers;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#f5f6fa',
     justifyContent: 'center',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    borderWidth: 4,
-    padding: 20,
-    marginTop: 20,
-    
-  },
-  Answer:{
-    marginTop: 10,
+    borderRadius: 20,
     borderWidth: 2,
-    fontStyle: 'bold',
-    borderColor: 'white',
-    borderRadius:50,
-    width: 100,
-    alignItems: 'center',
+    borderColor: '#dcdde1',
+    padding: 25,
+    marginTop: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
-  input: {
-    borderColor: 'black',
-    borderWidth: 1,
-    height: 50,
-    width: 140,
+  Answer: {
+    marginTop: 15,
+    borderWidth: 2,
+    borderRadius: 15,
+    width: '100%',
+    padding: 15,
+    backgroundColor: 'white',
+  },
+  resultTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#2d3436',
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  variableText: {
+    fontSize: 16,
+    color: '#2d3436',
     marginBottom: 10,
-    marginTop: 10,
-    paddingLeft: 10
+    fontWeight: '500',
+  },
+  resultText: {
+    fontSize: 18,
+    color: '#6c5ce7',
+    fontWeight: 'bold',
+    marginVertical: 5,
+    textAlign: 'center',
   }
 });
